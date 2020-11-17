@@ -373,8 +373,8 @@ mod tests {
         let mut model = Model::from_file("data/MNISTnet_uint8_quant.tflite").unwrap();
         model.version = 2;
         model.operator_codes.erase(4);
-        model.buffers.erase(22);
         model.buffers.erase(23);
+        model.buffers.erase(22);
         model.description.assign(&CString::new("flatbuffer").unwrap());
 
         {
